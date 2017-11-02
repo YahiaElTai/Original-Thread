@@ -10,10 +10,13 @@ class Header extends React.Component {
         width: '62px',
         left: '-4px',
         display: 'inline-block'
-      }
+      };
+
     }
 
    toggleClass(index, e) {
+    this.setState({ activeIndex: index });
+
     if (index === 0) {
       this.setState({
         width: '62px',
@@ -36,7 +39,7 @@ class Header extends React.Component {
       this.setState({ display: 'none'});
     }
 
-    this.setState({ activeIndex: index });
+
    }
 
   render() {
@@ -62,16 +65,16 @@ class Header extends React.Component {
               <div className="nav-group">
               <hr className="activiated" style={hrStyles} />
                 <ul className="nav-element">
-                  <li><Link  className={this.state.activeIndex==0 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 0)} to="/">Create</Link></li>
-                  <li><Link  className={this.state.activeIndex==1 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 1)} to="#">Shop</Link></li>
-                  <li><Link  className={this.state.activeIndex==2 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 2)} to="#">Campaigns</Link></li>
+                  <li><Link  className={this.state.activeIndex == 0 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 0)} to="#">Create</Link></li>
+                  <li><Link  className={this.state.activeIndex == 1 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 1)} to="#">Shop</Link></li>
+                  <li><Link  className={this.state.activeIndex == 2 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 2)} to="#">Campaigns</Link></li>
                   <li><Link to="#"><i className="fa fa-search" aria-hidden="true"></i></Link></li>
                 </ul>
                 <hr className="linebreak" />
                 <ul className="styles">
-                  <li><Link className={this.state.activeIndex==3 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 3)} to="#">CASUAL / STREETWEAR</Link></li>
-                  <li><Link className={this.state.activeIndex==4 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 4)} to="#">COMPANY</Link></li>
-                  <li><Link className={this.state.activeIndex==5 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 5)} to="#">TEAM JERSEYS</Link></li>
+                  <li><Link className={this.state.activeIndex == 3 ? 'active-color': null} onClick={this.toggleClass.bind(this, 3)} to="#">CASUAL / STREETWEAR</Link></li>
+                  <li><Link className={this.state.activeIndex == 4 ? 'active-color': null} onClick={this.toggleClass.bind(this, 4)} to="#">COMPANY</Link></li>
+                  <li><Link className={this.state.activeIndex == 5 ? 'active-color': null} onClick={this.toggleClass.bind(this, 5)} to="#">TEAM JERSEYS</Link></li>
                 </ul>
                 </div>
 
