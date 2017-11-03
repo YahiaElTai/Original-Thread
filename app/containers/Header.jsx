@@ -14,32 +14,18 @@ class Header extends React.Component {
 
     }
 
-   toggleClass(index, e) {
-    this.setState({ activeIndex: index });
+   toggleClass(index, width, left) {
+      this.setState({ activeIndex: index });
 
-    if (index === 0) {
-      this.setState({
-        width: '62px',
-        left: '-4px',
-        display: 'inline-block'
-      });
-    } else if(index === 1){
-      this.setState({
-        width: '46px',
-        left: '78px',
-        display: 'inline-block'
-      });
-    } else if (index === 2) {
-      this.setState({
-        width: '82px',
-        left: '152px',
-        display: 'inline-block'
-      });
-    } else {
-      this.setState({ display: 'none'});
-    }
-
-
+      if (index < 3 ) {
+          this.setState({
+            width: width,
+            left: left,
+            display: 'inline-block'
+          });
+      } else {
+          this.setState({ display: 'none'});
+        }
    }
 
   render() {
@@ -65,9 +51,9 @@ class Header extends React.Component {
               <div className="nav-group">
               <hr className="activiated" style={hrStyles} />
                 <ul className="nav-element">
-                  <li><Link  className={this.state.activeIndex == 0 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 0)} to="#">Create</Link></li>
-                  <li><Link  className={this.state.activeIndex == 1 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 1)} to="#">Shop</Link></li>
-                  <li><Link  className={this.state.activeIndex == 2 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 2)} to="#">Campaigns</Link></li>
+                  <li><Link  className={this.state.activeIndex == 0 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 0, '62px', '-4px')} to="#">Create</Link></li>
+                  <li><Link  className={this.state.activeIndex == 1 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 1, '46px', '78px')} to="#">Shop</Link></li>
+                  <li><Link  className={this.state.activeIndex == 2 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 2, '82px', '152px')} to="#">Campaigns</Link></li>
                   <li><Link to="#"><i className="fa fa-search" aria-hidden="true"></i></Link></li>
                 </ul>
                 <hr className="linebreak" />
