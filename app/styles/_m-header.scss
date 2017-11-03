@@ -5,24 +5,34 @@
 
 
   .container {
-    width: 78.69%;
+    width: 90%;
     margin: 0 auto;
   }
 
   .site-logo {
-
-    letter-spacing: 4px;
-    margin-top: 17px;
-    width: 23%;
-    float: left;
-    font-size: 9.36px;
-    font-family: "Montserrat";
-    color: rgb(165, 165, 165);
-    font-weight: bold;
+   text-align: center;
+   letter-spacing: 5px;
+   margin-top: 27px;
+   width: 28%;
+   float: left;
+   font-size: 9.36px;
+   font-family: "Montserrat";
+   color: #a5a5a5;
+   font-weight: bold;
+   padding-right: 4%;
   }
 
+  .site-logo p:first-child {
+    letter-spacing: 8px;
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: #a5a5a5;
+    line-height: 0;
+  }
+
+
   .navigation {
-    width: 77%;
+    width: 72%;
     float: left;
   }
 
