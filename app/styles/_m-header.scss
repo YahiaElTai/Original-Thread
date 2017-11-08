@@ -1,11 +1,12 @@
 // ----------------- Header Styles --------------------------
 
 #site-header-wrapper{
-  background-image: url("/images/Layer 7.png");
+  background-image: $background-image;
+  font-family: $header-font-family;
 
 
   .container {
-    width: 90%;
+    width: $header-container-width;
     margin: 0 auto;
   }
 
@@ -13,33 +14,30 @@
    text-align: center;
    letter-spacing: 5px;
    margin-top: 27px;
-   width: 28%;
+   width: $header-logo-width;
    float: left;
-   font-size: 9.36px;
-   font-family: "Montserrat";
-   color: #a5a5a5;
+   font-size: $header-logo-font-size;
+   color: $header-logo-color;
    font-weight: bold;
    padding-right: 3%;
   }
 
   .site-logo p:first-child {
     letter-spacing: 8px;
-    font-size: 14px;
-    font-family: "Montserrat";
-    color: #a5a5a5;
+    font-size: $header-big-logo-font-size;
     line-height: 0;
   }
 
 
   .navigation {
-    width: 72%;
+    width: $header-navigation-width;
     float: left;
   }
 
   .nav-group {
     position: relative;
     float: left;
-    width: 62%;
+    width: $nav-group-width;
   }
 
   .nav-element li {
@@ -53,24 +51,24 @@
     bottom: 99px;
     display: inline-block;
     margin: 0;
-    border: 2px solid rgb(96, 137, 160);
+    border: $header-active-nav-border;
     left: -4px;
     width: 62px;
  }
 
 
  .active-color {
-  color: rgb(230, 237, 242) !important;
+  color: $header-active-color !important;
  }
 
   .fa-search {
-    color: rgb(217, 217, 217);;
+    color: $header-search-icon-color;
   }
 
   .nav-element li a {
-    font-size: 12px;
-    font-family: "Montserrat";
-    color: rgb(128, 128, 128);
+    font-size: $nav-main-font-size;
+
+    color: $header-nav-gray-color;
     font-weight: bold;
     line-height: 1.2;
     text-decoration: none;
@@ -88,11 +86,11 @@
 
   .styles li a {
     display: inline-block;
-    font-family: "Montserrat";
-    color: rgb(128, 128, 128);
+
+    color: $header-nav-gray-color;
     text-transform: uppercase;
     line-height: 1.2;
-    font-size: 10px;
+    font-size: $nav-secondairy-font-size;
     text-decoration: none;
    }
 
@@ -100,12 +98,11 @@
     display: inline-block;
     text-align: center;
     float: left;
-    width: 38%;
+    width: $nav-icons-width;
   }
 
   .dropdown li {
-     color: rgb(217, 217, 217);
-     font-size: 14px;
+     font-size: $nav-icons-font-size;
      margin-right: 18px;
      display: inline-block;
    }
@@ -132,21 +129,21 @@
 
   .dropdown button {
     border: 0;
-    font-size: 12px;
+    font-size: $access-button-font-size;
     font-weight: bold;
     background-color: transparent;
-    color:white;
+    color: $access-button-color;
     width: 100px;
     height: 27px;
    }
 
    .dropdown button:hover {
 
-      background-color: rgb(128, 128, 128);
+      background-color: $access-button-background-color;
    }
 
    .linebreak {
-    border: 0.5px dashed rgb(128, 128, 128);
+    border: $nav-dashed-linebreak;
     width: 171%;
    }
 
