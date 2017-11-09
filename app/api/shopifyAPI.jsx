@@ -1,5 +1,6 @@
 let React = require('react');
 let ShopifyBuy = require('shopify-buy');
+let store = require('configureStore').configure();
 import axios from 'axios';
 
 class shopifyAPI {
@@ -32,7 +33,6 @@ class shopifyAPI {
         matchedPage.push(page);
       }
     });
-    console.log('matchedPage: ', matchedPage);
     return matchedPage[0];
   }
 
