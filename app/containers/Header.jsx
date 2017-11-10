@@ -30,53 +30,60 @@ class Header extends React.Component {
 
   render() {
 
-    let hrStyles =  {
-      left: this.state.left,
-      width: this.state.width,
-      display: this.state.display
-    };
+    // let hrStyles =  {
+    //   left: this.state.left,
+    //   width: this.state.width,
+    //   display: this.state.display
+    // };
+    <ul className="nav-secondary">
+      <li><Link className={this.state.activeIndex == 3 ? 'active-color': null} onClick={this.toggleClass.bind(this, 3)} to="#">CASUAL / STREETWEAR</Link></li>
+      <li><Link className={this.state.activeIndex == 4 ? 'active-color': null} onClick={this.toggleClass.bind(this, 4)} to="#">COMPANY</Link></li>
+      <li><Link className={this.state.activeIndex == 5 ? 'active-color': null} onClick={this.toggleClass.bind(this, 5)} to="#">TEAM JERSEYS</Link></li>
+    </ul>
 
     return (
       <header id="site-header-wrapper">
         <div className="container">
-          <div className="clearfix">
-
             <div className="site-logo">
-              <p>ORIGINAL THREAD</p>
-              <p>CUSTOM CLOTHIER</p>
+              <a href="./"></a>
+              <small className="tagline"></small>
             </div>
 
-            <nav className="navigation clearfix">
-
-              <div className="nav-group">
-              <hr className="activiated" style={hrStyles} />
-                <ul className="nav-element">
-                  <li><Link  className={this.state.activeIndex == 0 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 0, '62px', '-4px')} to="#">Create</Link></li>
-                  <li><Link  className={this.state.activeIndex == 1 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 1, '46px', '78px')} to="#">Shop</Link></li>
-                  <li><Link  className={this.state.activeIndex == 2 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 2, '82px', '152px')} to="#">Campaigns</Link></li>
-                  <li><Link to="#"><i className="fa fa-search" aria-hidden="true"></i></Link></li>
-                </ul>
-                <hr className="linebreak" />
-                <ul className="styles">
-                  <li><Link className={this.state.activeIndex == 3 ? 'active-color': null} onClick={this.toggleClass.bind(this, 3)} to="#">CASUAL / STREETWEAR</Link></li>
-                  <li><Link className={this.state.activeIndex == 4 ? 'active-color': null} onClick={this.toggleClass.bind(this, 4)} to="#">COMPANY</Link></li>
-                  <li><Link className={this.state.activeIndex == 5 ? 'active-color': null} onClick={this.toggleClass.bind(this, 5)} to="#">TEAM JERSEYS</Link></li>
-                </ul>
-                </div>
-
-                <div className="dropdown">
-                  <ul>
-                    <li><img className="needle" src="/images/needle.png" /></li>
-                    <li><img className="bell" src="/images/bell.png" /></li>
-                    <li><img className="basket" src="/images/basket.png" /></li>
-                    <li><button>Access</button></li>
+            <div className="header-menu">
+              <nav>
+                  <ul className="nav-primary">
+                    <li><Link  className={this.state.activeIndex == 0 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 0, '62px', '-4px')} to="#">Create</Link>
+                      <ul className="nav-secondary">
+                        <li><Link className={this.state.activeIndex == 3 ? 'active-color': null} onClick={this.toggleClass.bind(this, 3)} to="#">CASUAL / STREETWEAR</Link></li>
+                        <li><Link className={this.state.activeIndex == 4 ? 'active-color': null} onClick={this.toggleClass.bind(this, 4)} to="#">COMPANY</Link></li>
+                        <li><Link className={this.state.activeIndex == 5 ? 'active-color': null} onClick={this.toggleClass.bind(this, 5)} to="#">TEAM JERSEYS</Link></li>
+                        <li><a href="#">Test Item 1</a></li>
+                        <li><a href="#">Test Item 2</a></li>
+                      </ul>
+                    </li>
+                    <li><Link  className={this.state.activeIndex == 1 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 1, '46px', '78px')} to="#">Shop</Link></li>
+                    <li><Link  className={this.state.activeIndex == 2 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 2, '82px', '152px')} to="#">Campaigns</Link></li>
+                    <li><Link to="#"><i className="fa fa-search" aria-hidden="true"></i></Link></li>
                   </ul>
-                </div>
-
               </nav>
 
+              <div className="user-menu">
+                <div className="site-notifications">
+                  <ul>
+                    <li><a href="./" className="ui-toggle"><img className="saved-work" src="/images/needle.png" /></a><div className="counter">23</div></li>
+                    <li><a href="./"><img className="ui-toggle" src="/images/bell.png" /></a><div className="counter">433</div></li>
+                    <li><a href="./"><img className="ui-toggle" src="/images/basket.png" /></a><div className="counter">2</div></li>
+                  </ul>
+                </div>
+                <div className="account-access">
+                  <button>Access</button>
+                  <div className="dropdown">Dropdown Content</div>
+                  <div className="fader"></div>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </div>
       </header>
     )
   }

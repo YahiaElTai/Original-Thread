@@ -1,166 +1,222 @@
 // ----------------- Header Styles --------------------------
 
 #site-header-wrapper{
-  background-image: $background-image;
+  height: 116px;
+  background: $dark-gray;
   font-family: $header-font-family;
-
 
   .container {
     width: $header-container-width;
     margin: 0 auto;
+    height: inherit;
   }
+}
 
-  .site-logo {
-   text-align: center;
-   letter-spacing: 5px;
-   margin-top: 27px;
-   width: $header-logo-width;
+.site-logo {
+  display: block;
+  height: 116px;
+  width: 482px;
+  float: left;
+  font-weight: bold;
+  width: $header-logo-width;
+  color: $header-logo-color;
+  background-image: $logo-image;
+  background-repeat: no-repeat;
+
+  a{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+.header-menu {
+  height: 64px;
+  border-bottom: 1px dashed #393d40;
+
+    .navigation {
+      position: relative;
+      float: left;
+      width: $nav-group-width;
+    }
+}
+
+// .header-menu::before {
+//   content: "fader";
+//   position: absolute;
+//   display: block;
+//   height: 20px;
+//   width: 20px;
+//   background: red;
+//   bottom: -10px;
+//   left: -10px;
+// }
+
+//lose the bar just use border-top
+// hr.activated {
+//     display: none;
+// }
+
+
+ nav{
    float: left;
-   font-size: $header-logo-font-size;
-   color: $header-logo-color;
-   font-weight: bold;
-   padding-right: 3%;
-  }
+ }
 
-  .site-logo p:first-child {
-    letter-spacing: 8px;
-    font-size: $header-big-logo-font-size;
-    line-height: 0;
-  }
+.nav-primary {
+ margin: 0;
+ padding: 0;
 
-
-  .navigation {
-    width: $header-navigation-width;
-    float: left;
-  }
-
-  .nav-group {
-    position: relative;
-    float: left;
-    width: $nav-group-width;
-  }
-
-  .nav-element li {
-    margin-right: 35px;
+  li {
     display: inline-block;
     text-transform: uppercase;
   }
 
-  .activiated {
-    position: absolute;
-    bottom: 99px;
-    display: inline-block;
-    margin: 0;
-    border: $header-active-nav-border;
-    left: -4px;
-    width: 62px;
- }
-
-
- .active-color {
-  color: $header-active-color !important;
- }
-
-  .fa-search {
-    color: $header-search-icon-color;
-  }
-
-  .nav-element li a {
-    font-size: $nav-main-font-size;
-
+  li a {
     color: $header-nav-gray-color;
     font-weight: bold;
-    line-height: 1.2;
     text-decoration: none;
-   }
-
-   .styles li {
-     margin-right: 9%;
-     display: inline-block;
-     letter-spacing: 1px;
-   }
-
-   .styles li:nth-child(3) {
-     margin-right:0;
-   }
-
-  .styles li a {
-    display: inline-block;
-
-    color: $header-nav-gray-color;
-    text-transform: uppercase;
-    line-height: 1.2;
-    font-size: $nav-secondairy-font-size;
-    text-decoration: none;
-   }
-
-  .dropdown {
-    display: inline-block;
-    text-align: center;
-    float: left;
-    width: $nav-icons-width;
+    display: block;
+    padding: 22px 33px;
+    border-top: 3px solid transparent;
   }
 
-  .dropdown li {
-     font-size: $nav-icons-font-size;
-     margin-right: 18px;
-     display: inline-block;
-   }
+  li>ul{
+    position: absolute;
+    margin: 0;
+  }
 
-   .dropdown .needle {
-     width: 25px;
-     height: 22px;
+  .active-color {
+    color: $header-active-color !important;
+    border-top-color: $ot-tech-blue;
+  }
+
+ }
+
+  .nav-secondary {
+    padding: 0;
+  li {
+    display: inline-block;
+    letter-spacing: 1px;
+  }
+
+  li a {
+    font-size: $nav-secondairy-font-size;
+    color: $header-nav-gray-color;
+    display: inline-block;
+    border-top: none;
+    padding: 18px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  .active-color {
+      color: $header-active-color !important;
+     }
+  }
+
+ .fa-search {
+   color: $header-search-icon-color;
+ }
+
+.user-menu{
+  height: 64px;
+  float: right;
+
+  .site-notifications{
+    float: left;
+    height: 64px;
+
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      margin: 20px 10px 0;
+      padding: 0;
+      position: relative;
+    }
+    .saved-work {
+      width: 25px;
+      height: 22px;
     }
 
-    .dropdown .bell {
+    .site-updates {
       width: 21px;
       height: 22px;
-     }
+    }
 
-     .dropdown .basket {
+    .basket {
        width: 20px;
        height: 21px;
-      }
+    }
 
-   .dropdown li:nth-child(4) {
+    .counter{
+      background-color: $ot-tech-blue;
+      font-size: $extra-small;
+      border-radius: $tiny-round-corner;
+      color: $ot-white;
+      position:absolute;
+      padding: 2px 4px;
+      left: 20px;
+      top: -10px;
+    }
+
+    li:nth-child(4) {
       position: absolute;
       top: 15px;
-   }
-
-  .dropdown button {
-    border: 0;
-    font-size: $access-button-font-size;
-    font-weight: bold;
-    background-color: transparent;
-    color: $access-button-color;
-    width: 100px;
-    height: 27px;
-   }
-
-   .dropdown button:hover {
-
+    }
+    button:hover {
       background-color: $access-button-background-color;
-   }
+    }
+  }
 
-   .linebreak {
-    border: $nav-dashed-linebreak;
-    width: 171%;
-   }
+  .account-access{
+    float: left;
+    height: 64px;
 
+    button{
+      height: 64px;
+      color: $nav-gray;
+      padding: 0 40px 0 40px;
+      background: none;
+      border: 0;
+      font-weight: bold;
+    }
+    button:hover{
+      color: white;
+    }
 
-// Clear Fix for Floats ---------
-  .clearfix:before,
-  .clearfix:after {
-     content: "";
-     display: table;
-   }
+    .dropdown{
+      position: absolute;
+      background: white;
+      right: 0;
+      width: 400px;
+      height: 600px;
+      clear: both;
+      opacity: 0;
+      transition: .4s;
+      box-shadow: 4px 0px 20px rgba(0,0,0,.2);
+    }
 
-  .clearfix:after {
-     clear: both;
-   }
-
-  .clearfix {
-     zoom: 1;
-   }
-
+    button:hover + .dropdown {
+      opacity: 1;
+      transition: .4s;
+    }
+  }
 }
+
+
+.site-notifications {
+    float: right;
+    text-align: center;
+   }
+   .linebreak {
+     clear: both;
+     margin: 0;
+     padding: 0;
+    border: $nav-dashed-linebreak;
+   }
