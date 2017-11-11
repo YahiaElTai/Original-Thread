@@ -36,7 +36,7 @@
   src: url('roboto-regular.eot?#iefix') format('embedded-opentype'),
        url('roboto-regular.woff2') format('woff2'),
        url('roboto-regular.woff') format('woff'),
-       url('roboto-regular.ttf') format('truetype');
+       url('Roboto-Regular.ttf') format('truetype');
 
   font-weight: normal;
   font-style: normal;
@@ -50,7 +50,7 @@
   src: url('roboto-bold.eot?#iefix') format('embedded-opentype'),
        url('roboto-bold.woff2') format('woff2'),
        url('roboto-bold.woff') format('woff'),
-       url('roboto-bold.ttf') format('truetype');
+       url('Roboto-Bold.ttf') format('truetype');
 
   font-weight: bold;
   font-style: normal;
