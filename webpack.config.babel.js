@@ -83,7 +83,7 @@ const BASE_CONFIG = {
         }),
       },
       {
-        test: /\.(woff|woff2|otf|ttf)$/,
+        test: /\.(eot|woff|woff2|otf|ttf)$/,
         use: 'url-loader'
       },
       {
