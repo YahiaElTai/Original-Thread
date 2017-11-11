@@ -1,25 +1,49 @@
 // ----------------- Global Styles --------------------------
 
-* {
+html, body {
 	padding: 0;
+	margin: 0;
+	height: 100%;
+	font-size: 14px;
 }
 
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+h1,h2,h3,h4,h5{
+	padding: 0;
+	margin: 0;
 }
 
-html {
-  height: 100%;
-  box-sizing: border-box;
+//Sticky footer flexbox solution
+
+#main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-
-body {
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
+.main-content {
+  flex: 1;
 }
+
+header, footer {
+  flex: none; /* 2 */
+}
+
+header {
+	font-size: 1.2em;
+}
+// Normalize.css already in action. No further resets needed.
+
+// Clear Fix for Floats ---------
+  .clearfix:before,
+  .clearfix:after {
+     content: "";
+     display: table;
+   }
+
+  .clearfix:after {
+     clear: both;
+   }
+
+  .clearfix {
+     zoom: 1;
+   }
