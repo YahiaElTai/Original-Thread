@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Router, IndexRoute, browserHistory} from 'react-router';
+import { Route, Router, IndexRoute, browserHistory } from 'react-router';
 
 import DocumentMeta from 'react-document-meta';
 import Main from 'Main';
@@ -14,7 +14,7 @@ function logPageView(location) {
   ReactGA.pageview(location.pathname);
 }
 
-browserHistory.listen((location) => {
+browserHistory.listen(location => {
   logPageView(location);
 
   // scroll to top when changing page

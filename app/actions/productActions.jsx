@@ -31,7 +31,7 @@ export var preloadProductImages = () => {
     let images = [];
     products.map((product, index) => {
       images[index] = new Image();
-      images[index].src = product.selectedVariant.imageVariants[4].src;
+      images[index].src = product.selectedVariant.imageVariants[0].src;
       return images[index];
     });
   };
