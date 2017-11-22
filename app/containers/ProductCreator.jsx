@@ -4,8 +4,9 @@ let { connect } = require('react-redux');
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import Rnd from 'react-rnd';
+let actions = require('productActions');
 
-class Upload extends React.Component {
+class ProductCreator extends React.Component {
   constructor() {
     super();
 
@@ -16,22 +17,17 @@ class Upload extends React.Component {
         x: 0,
         y: 0
       },
+      activeProduct: null,
       fileDimensions: {
         width: 0,
         height: 0
       },
       dropzoneActive: false,
-      shirtStyles: [
+      shirtStyles:
         {
-          name: 'Male T-shirt',
-          image: '01-front-highlights-forwhite-1.png'
-        },
-        {
-          name: 'Female T-shirt',
-          image: '01-anvil-880-front-shadows.png'
+          name: 'Triblend Short Sleeve T-shirt',
+          image: '/images/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Clay.png'
         }
-      ],
-      activeShirtStyle: 0
     };
   }
 
@@ -110,35 +106,31 @@ class Upload extends React.Component {
     console.log('height: ', height);
     console.log(this.state);
   }
+
+  colorList() {
+    // let { activeProduct } = this.state;
+
+    // if (activeProduct) {
+    //   return activeProduct.options.options[1].values.map(color => {
+    //     return <div className="product-color-item" style={{ backgroundColor: `${color}` }} />;
+    //   });
+    // }
+  }
+
+
   render() {
-    let { dispatch } = this.props;
-    let { file, shirtStyles, activeShirtStyle, dropzoneActive } = this.state;
+    let { activeProduct} = this.props;
+    console.log('activeProduct: ' , activeProduct);
+
+    let { file, shirtStyles,  dropzoneActive } = this.state;
     let dropzoneRef;
 
     return (
-      <div>
-        <div>
-          <div>
-            <label for="shirt-style">Select shirt style</label>
-            <select
-              id="shirt-style"
-              onChange={event => {
-                this.setState({ activeShirtStyle: event.target.value });
-              }}
-            >
-              {shirtStyles.map((shirt, index) => {
-                return <option value={index}>{shirt.name}</option>;
-              })}
-            </select>
-
+      <div className="pc">
+        <div className="pc-container">
+          <div className="pc-left">
             <label for="add-artwork">Add your artwork</label>
-            <button
-              type="button"
-              className="button"
-              onClick={() => {
-                dropzoneRef.open();
-              }}
-            >
+            <button type="button" className="button" onClick={() => { dropzoneRef.open(); }}>
               Upload artwork
             </button>
             <div>
@@ -147,11 +139,10 @@ class Upload extends React.Component {
               </button>
             </div>
           </div>
-          <div>
-            <div
-              className="preview"
+          <div className="pc-middle">
+            <div className="preview"
               style={{
-                backgroundImage: `url('/images/${shirtStyles[activeShirtStyle].image}')`
+                backgroundImage: `url('${activeProduct ? activeProduct.options.images[0].src : shirtStyles.image} ')`
               }}
             >
               <Dropzone
@@ -181,6 +172,15 @@ class Upload extends React.Component {
               </Dropzone>
             </div>
           </div>
+          <div className="pc-right">
+            <div className="product-arr-trigger">
+              <Link to="/product_array">
+                <img src="/images/PRODUCT ARRAY TRIGGER.png" alt="Product Array Trigger" />
+              </Link>
+              <h4>{`${activeProduct ? activeProduct.options.title : shirtStyles.name}`}</h4>
+            </div>
+            <div className="product-color-group">{this.colorList()}</div>
+          </div>
         </div>
       </div>
     );
@@ -189,6 +189,7 @@ class Upload extends React.Component {
 
 export default connect(state => {
   return {
-    activeProduct: state.products.active
+    activeProduct: state.products.active,
+    collections: state.collections.all
   };
-})(Upload);
+})(ProductCreator);

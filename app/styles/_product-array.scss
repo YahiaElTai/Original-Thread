@@ -1,0 +1,39 @@
+.product-arr {
+	margin-top: 40px;
+}
+
+.product-arr-container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+}
+
+.product-arr-grid {
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.product-arr-item {
+	margin-top: 10px;
+	border: 0.5px solid black;
+	width: calc(20% - 1em);
+}
+
+

@@ -1,11 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
-let { connect } = require('react-redux');
-let actions = require('cartActions');
-import utils from 'utils';
-import Loader from 'Loader';
-import CollectionItem from 'CollectionItem';
-import Upload from 'upload';
+
+import ProductCreator from 'ProductCreator';
+import LiveFeed from 'LiveFeed';
 
 class Index extends React.Component {
   constructor() {
@@ -13,41 +9,13 @@ class Index extends React.Component {
   }
 
   render() {
-    let { collections } = this.props;
-    let liveFeedCollection = utils.searchObjects(10178953249, 'key', collections);
-
-    if (liveFeedCollection != undefined) {
-      return (
-        <div>
-          <Upload />
-          <div className="live-feed">
-            <div className="live-feed-container">
-              <div className="live-feed-grid">
-                {liveFeedCollection.products.map(product => {
-                  return (
-                    <CollectionItem
-                      key={product.attrs.product_id}
-                      id={product.attrs.product_id}
-                      image={product.attrs.images[0].src}
-                      title={product.attrs.title}
-                      description={product.attrs.body_html}
-                      price={utils.formatAsMoney(product.selectedVariant.price)}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    } else {
-      return <Loader />;
-    }
+    return (
+      <div>
+        <ProductCreator />
+        <LiveFeed />
+      </div>
+    );
   }
 }
 
-export default connect(state => {
-  return {
-    collections: state.collections.all
-  };
-})(Index);
+module.exports = Index;

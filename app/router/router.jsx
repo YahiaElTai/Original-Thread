@@ -5,6 +5,7 @@ import DocumentMeta from 'react-document-meta';
 import Main from 'Main';
 import Index from 'Index';
 import PageItem from 'PageItem';
+import ProductArray from 'ProductArray';
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-6241825-9'); // initialize Google Analytics
@@ -26,6 +27,7 @@ export default (
     <Route path="/" component={Main}>
       <IndexRoute path="/" component={Index} />
       <Route path="about" component={PageItem} />
+      <Route path="product_array" component={ProductArray} />
       <Route path="contact" component={PageItem} />
       <Route path="terms-of-service" component={PageItem} />
       <Route path="privacy-policy" component={PageItem} />

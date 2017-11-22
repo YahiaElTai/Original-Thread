@@ -1,0 +1,20 @@
+.live-feed {
+  margin-top: 80px;
+  // push to the button of the page
+}
+
+.live-feed-container {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.live-feed-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.live-feed-item {
+  margin-top: 10px;
+  width: calc(32% - 1em);
+}
