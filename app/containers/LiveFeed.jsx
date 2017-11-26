@@ -14,6 +14,10 @@ class LiveFeed extends React.Component {
   render() {
     let { collections } = this.props;
     let liveFeedCollection = utils.searchObjects(10178953249, 'key', collections);
+    if (liveFeedCollection) {
+      console.log(liveFeedCollection);
+    }
+
 
     if (liveFeedCollection != undefined) {
       return (

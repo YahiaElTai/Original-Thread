@@ -1,4 +1,5 @@
 .pc {
+  font-family: "Montserrat";
   width: 80%;
   margin: 40px auto 0px auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -8,74 +9,195 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
 
   .pc-left {
-    background: lightblue;
-    width: calc(28%);
+    width: 28%;
+
+    .product-details {
+      font-family: "Montserrat";
+      margin-left: 12px;
+      margin-top: 57px;
+
+        .product-details h6 {
+          margin-bottom: 10px;
+          color: gray;
+          font-size: 9px;
+        }
+
+        .project-title{
+          font-family: "Montserrat";
+          padding: 2px;
+          font-size: 22px;
+          width: 97%;
+          height: 36px;
+          font-weight: bold;
+          border: none;
+        }
+
+        .project-description {
+          font-family: "Montserrat";
+          line-height: 1.3;
+          color: gray;
+          padding: 6px;
+          font-size: 12px;
+          width: 95%;
+          height: 80px;
+          border: 0.5px solid lightgray;
+        }
+    }
+
+    .btn-group {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .btn-item {
+      cursor: pointer;
+      border: 0.5px solid black;
+      text-align: center;
+      width: 25%;
+      height: 65px;
+    }
+
+
+    .btn-item p {
+      font-size: 9px;
+    }
+
+    .btn-item i {
+      font-size: 22px;
+      margin-top: 7px;
+    }
 
 
   }
 
   .pc-middle {
-    background: lightgrey;
-    width: calc(44%);
+    width: 44%;
 
+    .preview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 500px;
+      width: 500px;
+    }
+
+    .dropzone {
+      height: 200px;
+      width: 200px;
+      border: 2px dashed gray;
+
+      &.active {
+        border-color: green;
+      }
+
+      &.accepted {
+      }
+
+      img {
+        -webkit-user-drag: none;
+      }
+    }
 
   }
 
   .pc-right {
-    background: lightblue;
-    width: calc(28%);
+    width: 28%;
+
+    .product-arr-trigger h4 {
+        text-align: center;
+    }
+
+    .product-arr-trigger p {
+        font-size: 12px;
+        text-align: center;
+        color: black;
+        margin-bottom: 20px;
+        margin-top: 2px;
+    }
+
+    .product-arr-trigger img {
+        width: 37%;
+        height: auto;
+        margin-top: 29px;
+        margin-bottom: 14px;
+    }
 
 
-    // .product-arr-trigger a img {
-    //   width: 110px;
-    //   height: 110px;
-    // }
+    .pc-product-color-group {
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .pc-product-color-item {
+         margin-right: 3px;
+         margin-bottom: 4px;
+         border: 0.1px solid black;
+         width: 17%;
+         height: 30px;
+      }
+    }
 
   }
 
-}
 
+  .decisions {
+    font-size: 16px;
+    height: 64px;
+    background-color: rgb(225, 225, 225);
 
-.product-color-group {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+    .fa-refresh {
+      margin-left: 28px;
+      margin-right: 15px;
+      color: rgb(57, 61, 64);
+    }
 
-  .product-color-item {
-    border: 0.1px solid black;
-    width: 23%;
-    height: 7px;
-  }
-}
+    .save-work {
+     border: 0;
+     color: white;
+     margin: 16px;
+     padding: 7px 26px;
+     border-radius: 4px;
+     background-color: #6089a0;
+    }
 
-.preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 500px;
-  width: 500px;
-}
-
-.dropzone {
-  height: 200px;
-  width: 200px;
-  border: 2px dashed gray;
-
-  &.active {
-    border-color: green;
+    .publish {
+      border: 0;
+      color: white;
+      margin: 16px;
+      padding: 7px 47px;
+      border-radius: 4px;
+      background-color: rgb(23, 25, 26);
+      float: right;
+    }
   }
 
-  &.accepted {
-  }
 
-  img {
-    -webkit-user-drag: none;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
