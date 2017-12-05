@@ -19,8 +19,8 @@ class ProductCreator extends React.Component {
         y: 0
       },
       fileDimensions: {
-        width: 0,
-        height: 0
+        width: 150,
+        height: 150
       },
       dropzoneActive: false
     };
@@ -104,20 +104,28 @@ class ProductCreator extends React.Component {
       .catch(error => console.log('Error uploading file: ', error));
   }
 
-  handleResized(e, data) {
-    let x = data.x;
-    let y = data.y;
-    let width = e.path[1].clientWidth;
-    let height = e.path[1].clientHeight;
-    this.setState({
-      fileCoordinates: { x, y },
-      fileDimensions: { width, height }
-    });
+  handleOnResize(e, direction, ref, delta, position){
+     this.setState({
+      fileDimensions: {
+        width: ref.offsetWidth,
+        height: ref.offsetHeight,
+      },
+       fileCoordinates: {
+        ...position
+       }
+
+     });
+      console.log("this.state from onResize:", this.state);
+
+  }
+
+  handledragged(e, d) {
+    let x = d.x;
+    let y = d.y;
     console.log('x: ', x);
     console.log('y: ', y);
-    console.log('width: ', width);
-    console.log('height: ', height);
-    console.log(this.state);
+
+    this.setState({ fileCoordinates: { x, y } });
   }
 
   handleActiveColor(index) {
@@ -128,7 +136,6 @@ class ProductCreator extends React.Component {
 
   colorList() {
     let { activeProduct } = this.props;
-
 
     if (activeProduct) {
       let colorArray = activeProduct.options.options;
@@ -147,11 +154,20 @@ class ProductCreator extends React.Component {
 
 
   render() {
-    let { activeProduct} = this.props;
-    console.log('activeProduct: ' , activeProduct);
 
+    let { activeProduct} = this.props;
+    let rndStyles = {};
     let { file,  dropzoneActive , activeImage} = this.state;
     let dropzoneRef;
+    if (file) {
+      rndStyles = {
+        backgroundImage: `url('uploads/${file}')`,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain'
+
+      };
+    };
 
     return (
       <div className="pc">
@@ -200,19 +216,22 @@ class ProductCreator extends React.Component {
                   dropzoneRef = node;
                 }}
               >
-                <Rnd
-                  default={{
-                    x: this.state.fileCoordinates.x,
-                    y: this.state.fileCoordinates.y,
-                    width: 200,
-                    maxWidth: 200
-                  }}
-                  bounds="parent"
-                  onResizeStop={this.handleResized.bind(this)}
-                  onDragStop={this.handleResized.bind(this)}
-                >
-                  {file ? <img src={`uploads/${file}`} /> : ''}
-                </Rnd>
+               <Rnd
+                 style={ file ? rndStyles : ''}
+                 default={{
+                   x: this.state.fileCoordinates.x,
+                   y: this.state.fileCoordinates.y,
+                   width: this.state.fileDimensions.width,
+                   height: this.state.fileDimensions.height
+                 }}
+                 size={{ width: this.state.fileDimensions.width,  height: this.state.fileDimensions.height }}
+                 position={{ x: this.state.fileCoordinates.x, y: this.state.fileCoordinates.y }}
+                 lockAspectRatio = "true"
+                 bounds="parent"
+                 onResize={this.handleOnResize.bind(this)}
+                 onDragStop={this.handledragged.bind(this)}
+               >
+               </Rnd>
               </Dropzone>
             </div>
           </div>
@@ -243,3 +262,5 @@ export default connect(state => {
     collections: state.collections.all
   };
 })(ProductCreator);
+
+

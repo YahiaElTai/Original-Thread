@@ -41,25 +41,16 @@ router.route('/new_product_image').post(function(req, res) {
   const projectTitle = req.body.projectTitle;
   const projectDescription = req.body.projectDescription;
 
-  console.log('projectTitle: ', projectTitle);
-  console.log('projectDescription: ', projectDescription);
   const uploadedImage = 'public/uploads/' + req.body.filename;
   const backgroundImage = req.body.backgroundImage;
-  console.log('backgroundImage: ', backgroundImage);
 
   const fileDimensions = req.body.fileDimensions;
   const fileCoordinates = req.body.fileCoordinates;
 
-  console.log('fileDimensions: ', fileDimensions);
-  console.log('fileCoordinates: ', fileCoordinates);
-  console.log('req.body.filename: ', req.body.filename);
-
-  const uploadedImageWidth = fileDimensions.width;
-  const uploadedImageHeight = fileDimensions.height;
-  const uploadedImageOffsetX = 155 + fileCoordinates.x;
-  const uploadedImageOffsetY = 110 + fileCoordinates.y;
-
-
+  const uploadedImageWidth = 2 * fileDimensions.width;
+  const uploadedImageHeight = 2 * fileDimensions.height;
+  const uploadedImageOffsetX = 291 +  2 * fileCoordinates.x;
+  const uploadedImageOffsetY = 291 +  2 * fileCoordinates.y;
 
    const options = {
      url: backgroundImage,
@@ -111,7 +102,6 @@ router.route('/new_product_image').post(function(req, res) {
 
 });
 
-
   router.route('/update_live_feed').put(function(req, res) {
 
     const productID = req.body.id;
@@ -131,7 +121,6 @@ router.route('/new_product_image').post(function(req, res) {
                                 })
 
                                .catch(err => console.error('shopify addding product err:', err));
-
 
   })
 
