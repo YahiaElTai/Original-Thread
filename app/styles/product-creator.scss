@@ -1,249 +1,282 @@
 .pc {
-  font-family: "Montserrat";
-  width: 80%;
-  margin: 40px auto 0px auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- }
-
-.pc-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    font-family: "Montserrat";
+    width: 80%;
+    margin: 40px auto 0px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-  .pc-left {
+.pc-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 550px;
+    padding-top: 16px;
+}
+.pc-left {
     width: 28%;
 
     .product-details {
-      font-family: "Montserrat";
-      margin-left: 12px;
-      margin-top: 57px;
+        font-family: "Montserrat";
+        margin-left: 12px;
+        margin-top: 78px;
 
-        .product-details h6 {
-          margin-bottom: 10px;
-          color: gray;
-          font-size: 9px;
+        .title-sm {
+            margin-bottom: 0;
+            color: #b7b5a4;
+            font-size: 9px;
         }
 
-        .project-title{
-          font-family: "Montserrat";
-          padding: 2px;
-          font-size: 22px;
-          width: 97%;
-          height: 36px;
-          font-weight: bold;
-          border: none;
+        .description-sm {
+            margin-top: 4px;
+            margin-bottom: 0;
+            color: #b7b5a4;
+            font-size: 9px;
+        }
+
+        .project-title {
+            font-family: "Montserrat";
+            padding: 2px;
+            font-size: 18px;
+            width: 97%;
+            height: 36px;
+            font-weight: bold;
+            border: none;
         }
 
         .project-description {
-          font-family: "Montserrat";
-          line-height: 1.3;
-          color: gray;
-          padding: 6px;
-          font-size: 12px;
-          width: 95%;
-          height: 80px;
-          border: 0.5px solid lightgray;
+            margin-top: 5px;
+            font-family: "Montserrat";
+            line-height: 1.3;
+            color: gray;
+            padding: 6px;
+            font-size: 10px;
+            width: 95%;
+            height: 53px;
+            border: 0.5px solid lightgray;
         }
     }
 
     .btn-group {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+        margin-top: 10px;
+        margin-left: 15px;
     }
 
     .btn-item {
-      cursor: pointer;
-      border: 0.5px solid black;
-      text-align: center;
-      width: 25%;
-      height: 65px;
+        cursor: pointer;
+        border: 0.5px dashed black;
+        text-align: center;
+        width: 25%;
+        height: 57px;
+        float: left;
+        margin-right: 4px;
     }
+
+    .btn-item:hover {
+        background-color: black;
+        color: white;
+    }
+
     .btn-item p {
-      font-size: 9px;
+        font-size: 8px;
+        color: #887a7a;
     }
 
     .btn-item i {
-      font-size: 22px;
-      margin-top: 7px;
+        font-size: 16px;
+        margin-top: 11px;
     }
-  }
+}
 
-  .pc-middle {
+.pc-middle {
     width: 44%;
 
     .preview {
-      position: relative;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 500px;
-      width: 100%;
-    }
-
-    .input-wrapper {
-      position: relative;
-    }
-
-    .text-input {
-      border: 0;
-      text-align: center;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      border-radius: 4px;
-    }
-
-    .bordered {
-      border: 1px solid #79adf7 !important;
-    }
-
-    .fa-expand {
-      background: #fcfcfc;
-      border-radius: 2px;
-      font-size: 13px;
-      padding: 2px;
-      position: absolute;
-      top: -7px;
-      right: -7px;
-      cursor: default;
-      z-index: 100;
-    }
-
-    .fa-times {
-      background: #fcfcfc;
-      border-radius: 2px;
-      font-size: 13px;
-      padding: 2px;
-      position: absolute;
-      bottom: -7px;
-      right: -8px;
-      cursor: pointer;
-      z-index: 100;
+        position: relative;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 500px;
+        width: 100%;
     }
 
     .error-text {
-      font-size: 14px;
-      font-family: "Roboto";
-      color: rgb(201, 59, 59);
-      border-radius: 4px;
-      background-color: rgb(255, 223, 223);
-      box-shadow: 0px 2px 5.52px 0.48px rgba(0, 0, 0, 0.24);
-      position: absolute;
-      top: 73px;
-      left: 70px;
-      padding: 10px;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .text-transform-group {
-     padding: 10px 0px;
-     font-family: "Montserrat";
-     color: #fff;
-     background-color: #393d40;
-     text-align: center;
-     font-size: 16px;
-     display: flex;
-     flex-wrap: wrap;
-     cursor: pointer;
-     height: 50%;
-     border-radius: 5px;
-    }
-
-    .text-item-1 {
-      border-right: 0.5px solid gray;
-      width: 30%;
-    }
-    .text-item-2 {
-      border-right: 0.5px solid gray;
-      width: 11%;
-    }
-    .text-item-3 {
-      border-right: 0.5px solid gray;
-      width: 12%;
-    }
-    .text-item-4 {
-      border-right: 0.5px solid gray;
-      width: 29%;
-    }
-    .text-item-5 {
-      width: 17%;
-    }
-
-    .color-picker {
-      position: absolute;
-      right: 0px;
-    }
-
-    .bold {
-      font-weight: bold;
-    }
-
-    .italic {
-      font-style: italic;
-    }
-
-    div.ReactFontPicker {
-      color: #fff;
-      background-color: #393d40;
-      width: 100%;
-      margin-top: 4px;
-    }
-
-    div.ReactFontPicker_Wrapper {
-      border: 0;
-    }
-
-    div.ReactFontPicker_SelectedOption {
-      padding-left: 10px;
-    }
-
-    div.ReactFontPicker_Options {
-      background-color: rgb(57, 61, 64);
-    }
-
-    div.ReactFontPicker_Option:hover {
-      background-color: #585858;
-    }
-
-    .background-upload {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
+        font-size: 14px;
+        font-family: "Roboto";
+        color: rgb(201, 59, 59);
+        border-radius: 4px;
+        background-color: rgb(255, 223, 223);
+        box-shadow: 0px 2px 5.52px 0.48px rgba(0, 0, 0, 0.24);
+        position: absolute;
+        top: 74px;
+        left: 96px;
+        padding: 10px;
+        display: inline-block;
+        text-align: center;
     }
 
     .dropzone {
-      height: 204px;
-      width: 204px;
-      border: 2px dashed gray;
-      position: relative;
-      left: 138px;
-      top: 178px;
+        height: 204px;
+        width: 204px;
+        border: 2px dashed gray;
+        position: absolute;
+        left: 138px;
+        top: 178px;
 
-      &.active {
-        border-color: green;
-      }
+        &.active {
+            border-color: green;
+        }
 
-      &.accepted {
-      }
-
-      img {
-        -webkit-user-drag: none;
-      }
+        &.accepted {} img {
+            -webkit-user-drag: none;
+        }
     }
 
+    .background-upload {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
+    .input-wrapper {
+        position: relative;
+    }
 
-  }
+    .text-input {
+        border: 0;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border-radius: 4px;
+    }
 
-  .pc-right {
+    .bordered {
+        border: 1px solid #79adf7 !important;
+    }
+
+    .fa-expand {
+        background: #fcfcfc;
+        border-radius: 3px;
+        border: 0.5px solid #707070;
+        font-size: 13px;
+        padding: 3px;
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        cursor: nesw-resize;
+        z-index: 100;
+    }
+
+    .fa-times {
+        background: #fcfcfc;
+        border-radius: 3px;
+        border: 0.5px solid #707070;
+        font-size: 13px;
+        padding: 3px;
+        position: absolute;
+        bottom: -7px;
+        right: -8px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .text-transform-group {
+        padding: 10px 0px;
+        font-family: "Montserrat";
+        color: #fff;
+        background-color: #393d40;
+        text-align: center;
+        font-size: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        cursor: pointer;
+        height: 50%;
+        border-radius: 5px;
+    }
+
+    .font-family {
+        border-right: 0.5px solid gray;
+        width: 30%;
+    }
+
+    .bold-style {
+        border-right: 0.5px solid gray;
+        width: 11%;
+    }
+
+    .italic-style {
+        border-right: 0.5px solid gray;
+        width: 12%;
+    }
+
+    .text-color {
+        border-right: 0.5px solid gray;
+        width: 29%;
+    }
+
+    .text-color-bg {
+        margin-left: 9px;
+        margin-top: 1px;
+        border-radius: 3px;
+        width: 80%;
+        height: 80%;
+    }
+
+    .btn-ok {
+        width: 17%;
+    }
+
+    .color-picker {
+        position: absolute;
+        right: 0px;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .italic {
+        font-style: italic;
+    }
+
+    div.ReactFontPicker {
+        color: #fff;
+        background-color: #393d40;
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    div.ReactFontPicker_Wrapper {
+        border: 0;
+    }
+
+    div.ReactFontPicker_SelectedOption {
+        padding-left: 10px;
+    }
+
+    div.ReactFontPicker_Options {
+        background-color: rgb(57, 61, 64);
+    }
+
+    div.ReactFontPicker_Option:hover {
+        background-color: #585858;
+    }
+}
+
+.pc-right {
     width: 28%;
 
-    .product-arr-trigger h4 {
+    .product-arr-trigger img {
+        width: 34%;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 11px;
+    }
+
+    .product-arr-trigger h5 {
         text-align: center;
+        font-size: 13px;
+        color: #3e3838;
     }
 
     .product-arr-trigger p {
@@ -254,89 +287,130 @@
         margin-top: 2px;
     }
 
-    .product-arr-trigger img {
-        width: 37%;
-        height: auto;
-        margin-top: 29px;
-        margin-bottom: 14px;
-    }
-
     .pc-product-color-group {
-      width: 95%;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+        margin-left: 1px;
 
-      .pc-product-color-item {
-         margin-right: 3px;
-         margin-bottom: 4px;
-         border: 0.1px solid black;
-         width: 17%;
-         height: 30px;
-      }
+        .pc-product-color-item {
+            width: 16%;
+            margin-right: 5px;
+            margin-bottom: 4px;
+            float: left;
+        }
+
+        .pc-product-color {
+            width: 100%;
+            height: 35px;
+        }
+
+        .color-name {
+            text-align: center;
+            font-size: 7px;
+            margin: 4px 0px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        }
     }
 
-  }
+    .product-color-group {
+        height: 70px;
+    }
 
-  .decisions {
+    .product-color-item {
+        width: 17%;
+        height: 14px;
+        float: left;
+        margin: 3px;
+    }
+
+    .icon-img {
+        margin-right: 7px;
+        width: 26px;
+        height: auto;
+    }
+
+    .fabric-icons {
+        margin-top: 15px;
+    }
+
+    .fabric-info {
+        margin-top: 12px;
+    }
+
+    .fabric-info h6 {
+        margin: 5px 0;
+        font-size: 9px;
+        text-transform: uppercase;
+    }
+
+    .fabric-info p {
+        width: 90%;
+        line-height: 2;
+        color: gray;
+        font-size: 7px;
+        margin: 0;
+    }
+
+    .fabric-info-list {
+        margin-top: 15px;
+    }
+
+    .fabric-info ul {
+        color: gray;
+        margin: 0;
+        padding: 0;
+        padding-left: 14px;
+        line-height: 2;
+        font-size: 7px;
+        float:left;
+
+    }
+
+    .fabric-info img {
+        margin-left: 22px;
+        width: 95px;
+        height: auto;
+        border: 3px solid white;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 -2px 9px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+.decisions {
     font-size: 16px;
-    height: 64px;
+    height: 50px;
     background-color: rgb(225, 225, 225);
 
     .fa-refresh {
-      margin-left: 28px;
-      margin-right: 15px;
-      color: rgb(57, 61, 64);
+        margin-left: 28px;
+        margin-right: 15px;
+        color: rgb(57, 61, 64);
     }
 
     .save-work {
-     border: 0;
-     color: white;
-     margin: 16px;
-     padding: 7px 26px;
-     border-radius: 4px;
-     background-color: #6089a0;
+        border: 0;
+        color: white;
+        margin: 13px;
+        padding: 4px 24px;
+        border-radius: 4px;
+        background-color: #6089a0;
     }
 
     .publish {
-      border: 0;
-      color: white;
-      margin: 16px;
-      padding: 7px 47px;
-      border-radius: 4px;
-      background-color: rgb(23, 25, 26);
-      float: right;
+        border: 0;
+        color: white;
+        margin: 10px 16px;
+        padding: 6px 50px;
+        border-radius: 4px;
+        background-color: rgb(23, 25, 26);
+        float: right;
     }
-  }
+}
 
-  .hide {
+.hide {
     display: none !important;
-  }
-  .show {
+}
+
+.show {
     display: block !important;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

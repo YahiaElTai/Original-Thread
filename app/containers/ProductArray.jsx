@@ -10,7 +10,7 @@ class ProductArray extends React.Component {
   constructor() {
     super();
     this.state = {
-      activeTab: 'all'
+      activeTab: 'men'
     };
   }
 
@@ -58,9 +58,10 @@ class ProductArray extends React.Component {
         <div className="product-arr">
           <div className="product-arr-container">
             <div className="tab">
-              <button onClick={this.openTab.bind(this, 'all')}>All</button>
-              <button onClick={this.openTab.bind(this, 'men')}>Men/Unisex</button>
-              <button onClick={this.openTab.bind(this, 'women')}>Women</button>
+              <button className="product-types">Pick product types to design:</button>
+              <button className={activeTab === "all" ? "active-tab" : ''} onClick={this.openTab.bind(this, 'all')}>All</button>
+              <button className={activeTab === "men" ? "active-tab" : ''} onClick={this.openTab.bind(this, 'men')}>Men/Unisex</button>
+              <button className={activeTab === "women" ? "active-tab" : ''} onClick={this.openTab.bind(this, 'women')}>Women</button>
             </div>
             <div className="product-arr-grid">
               {activeCollection.products.map(product => {
@@ -77,6 +78,7 @@ class ProductArray extends React.Component {
                 );
               })}
             </div>
+            <div className="clearfix"></div>
           </div>
         </div>
       );

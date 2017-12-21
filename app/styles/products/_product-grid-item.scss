@@ -1,5 +1,6 @@
 .product-item-image {
 	height: auto;
+	margin-top: 10px;
 	width: 100%;
 	background-position: center center;
 	background-size: contain;
@@ -7,13 +8,15 @@
 }
 
 .product-item-content {
+	margin-left: 22px;
+	text-align: center;
+	margin-bottom: 5px;
 	font-family: 'Montserrat';
 	color: rgb(17, 17, 17);
 	float: left;
 	width: 75%;
 
 	.product-item-title {
-		text-align: center;
 		font-size: 10px;
 		font-weight: bold;
 		margin: 0;
@@ -21,13 +24,12 @@
 
 	.product-color-group {
 		width: 100%;
-		margin: 0 auto;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
+		margin: 4px 0px;
+
 
 		.product-color-item {
-			border: 0.1px solid black;
+			margin: 1px 1px;
+			float:left;
 			width: 23%;
 			height: 7px;
 		}
@@ -35,16 +37,21 @@
 
 	.product-item-description {
 		font-size: 9px;
-		font-weight: normal;
+	    font-weight: bold;
+	    color: #0ce4f1;
 	}
 }
 
 .product-item-price {
+	text-align: center;
+	background-color: #f7ecec;
 	font-size: 9px;
 	font-family: 'Montserrat';
-	color: rgb(17, 17, 17);
+	color: #111111;
 	float: right;
-	width: 25%;
+	width: 18%;
+	padding-top: 5px;
+	padding-bottom: 2px;
 }
 
 

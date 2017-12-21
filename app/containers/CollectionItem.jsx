@@ -51,7 +51,7 @@ class CollectionItem extends React.Component {
           <div className="product-color-group">{this.colorList()}</div>
           <p className="product-item-description">{description}</p>
         </div>
-        <div className="product-item-price">{this.getProductPrice()}</div>
+        <div className={productClass === 'product-arr-item'? '' :'product-item-price'} >{this.getProductPrice()}</div>
       </div>
     );
   }

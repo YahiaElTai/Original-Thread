@@ -47,7 +47,9 @@ class ProductCreator extends React.Component {
       errorMessage: false,
       transformMode: true,
       editMode: false,
-      showColorPicker: false
+      showColorPicker: false,
+      selectedColor: 0,
+      colorCount: 15
     };
   }
 
@@ -214,17 +216,30 @@ class ProductCreator extends React.Component {
 
   handleActiveColor(index) {
     let { activeProduct } = this.props;
-    this.setState({ activeImage: activeProduct.options.images[index].src });
+    this.setState({ activeImage: activeProduct.options.images[index].src, selectedColor: index });
   }
 
   colorList() {
+    let { selectedColor, colorCount } = this.state;
     let { activeProduct } = this.props;
 
     if (activeProduct) {
       let colorArray = activeProduct.options.options;
-      if (colorArray.length > 1) {
+      if (colorArray.length > 1 && colorCount < 13) {
         return activeProduct.options.options[1].values.map((color, index) => {
-          return <div onClick={this.handleActiveColor.bind(this, index)} className="pc-product-color-item" style={{ backgroundColor: `${color}` }} />;
+          return (
+            <div
+              onClick={this.handleActiveColor.bind(this, index)}
+              className={selectedColor === index ? 'pc-product-color-item shadow' : 'pc-product-color-item'}
+            >
+              <div className="pc-product-color" style={{ backgroundColor: `${color}` }} />
+              <div className="color-name">{color}</div>
+            </div>
+          );
+        });
+      } else if (colorArray.length > 1 && colorCount > 13) {
+        return activeProduct.options.options[1].values.map((color, index) => {
+          return <div onClick={this.handleActiveColor.bind(this, index)} className="product-color-item" style={{ backgroundColor: `${color}` }} />;
         });
       }
     }
@@ -232,7 +247,7 @@ class ProductCreator extends React.Component {
 
   componentDidMount() {
     let { activeProduct } = this.props;
-    this.setState({ activeImage: activeProduct.options.images[0].src });
+    this.setState({ activeImage: activeProduct.options.images[0].src, colorCount: activeProduct.options.options[1].values.length });
   }
 
   validateText(x, y, width) {
@@ -329,8 +344,6 @@ class ProductCreator extends React.Component {
 
     let { activeProduct } = this.props;
     console.log('activeProduct:', activeProduct);
-    console.log(this.state.text);
-    let rndStyles = {};
     let {
       aspectRatio,
       fontSize,
@@ -350,7 +363,8 @@ class ProductCreator extends React.Component {
       textColor,
       activeImage,
       errorMessage,
-      transformMode
+      transformMode,
+      colorCount
     } = this.state;
     let dropzoneRef;
 
@@ -383,11 +397,11 @@ class ProductCreator extends React.Component {
               </div>
             </div>
 
-            <div className="product-details">
-              <h6>Project Title</h6>
+            <div className="product-details clearfix">
+              <h6 className="title-sm">Project Title</h6>
               <input type="text" className="project-title" ref="projectTitle" defaultValue="Yo Momma's Bounds" />
 
-              <h6>Description</h6>
+              <h6 className="description-sm">Description</h6>
               <textarea
                 type="text"
                 className="project-description"
@@ -473,19 +487,19 @@ class ProductCreator extends React.Component {
                 bounds="parent"
               >
                 <div className={editMode ? 'text-transform-group' : 'hide'}>
-                  <div onClick={this.handleShowFontPicker.bind(this)} className="text-item-1">
+                  <div onClick={this.handleShowFontPicker.bind(this)} className="font-family">
                     Font Family
                   </div>
-                  <div onClick={this.handleBoldStyle.bind(this)} className="text-item-2">
+                  <div onClick={this.handleBoldStyle.bind(this)} className="bold-style">
                     B
                   </div>
-                  <div onClick={this.handleItalicStyle.bind(this)} className="text-item-3">
+                  <div onClick={this.handleItalicStyle.bind(this)} className="italic-style">
                     I
                   </div>
-                  <div onClick={this.handleColorPicker.bind(this)} className="text-item-4">
-                    Color
+                  <div onClick={this.handleColorPicker.bind(this)} className="text-color">
+                    <div className="text-color-bg" style={{backgroundColor: textColor}} ></div>
                   </div>
-                  <div onClick={this.exitEditMode.bind(this)} className="text-item-5">
+                  <div onClick={this.exitEditMode.bind(this)} className="btn-ok">
                     OK
                   </div>
                 </div>
@@ -506,10 +520,33 @@ class ProductCreator extends React.Component {
               <Link to="/product_array">
                 <img src="/images/PRODUCT ARRAY TRIGGER.png" alt="Product Array Trigger" />
               </Link>
-              <h4>{activeProduct ? activeProduct.options.title : ''}</h4>
+              <h5>{activeProduct ? activeProduct.options.title : ''}</h5>
               <p>60% Cotton 30% Polyster</p>
             </div>
-            <div className="pc-product-color-group">{this.colorList()}</div>
+            <div className={colorCount < 13 ? 'pc-product-color-group' : 'product-color-group'}>
+                {this.colorList()}
+            </div>
+            <div className="clearfix" />
+            <div className="fabric-icons">
+                <img className="icon-img" src="/images/Layer 266.png" alt="Fabric Icon 1" />
+                <img className="icon-img" src="/images/Layer 265.png" alt="Fabric Icon 2" />
+                <img className="icon-img" src="/images/Layer 264.png" alt="Fabric Icon 3" />
+                <img className="icon-img" src="/images/Layer 263.png" alt="Fabric Icon 4" />
+            </div>
+            <div className="fabric-info">
+                <h6>magic in the fabric</h6>
+                <p>This super-soft, baby-knit t-shirt looks great on both men and women. It is an updated unisex tee, which fits like a well-loved favorite. Made from 100% cotton, except for heather colors, which contain polyester.</p>
+                <div className="fabric-info-list">
+                  <ul>
+                    <li>100% combed and ring-spun cotton</li>
+                    <li>Baby-knit jersey</li>
+                    <li>Shoulder-to-shoulder taping</li>
+                    <li>Cover stitched and hemmed sleeves</li>
+                    <li>Side-seamed</li>
+                  </ul>
+                  <img src="/images/fabric.png" alt="fabric image" />
+                </div>
+            </div>
           </div>
         </div>
         <div className="decisions">

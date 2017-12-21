@@ -1,6 +1,6 @@
 .live-feed {
-  margin-top: 80px;
-  // push to the button of the page
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .live-feed-container {
@@ -17,4 +17,9 @@
 .live-feed-item {
   margin-top: 10px;
   width: calc(32% - 1em);
+}
+
+.loader {
+	text-align: center;
+	font-size: 20px;
 }

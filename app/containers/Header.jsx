@@ -45,7 +45,7 @@ class Header extends React.Component {
       <header id="site-header-wrapper">
         <div className="container">
             <div className="site-logo">
-              <a href="./"></a>
+              <a href="/"></a>
               <small className="tagline"></small>
             </div>
 
@@ -57,8 +57,6 @@ class Header extends React.Component {
                         <li><Link className={this.state.activeIndex == 3 ? 'active-color': null} onClick={this.toggleClass.bind(this, 3)} to="#">CASUAL / STREETWEAR</Link></li>
                         <li><Link className={this.state.activeIndex == 4 ? 'active-color': null} onClick={this.toggleClass.bind(this, 4)} to="#">COMPANY</Link></li>
                         <li><Link className={this.state.activeIndex == 5 ? 'active-color': null} onClick={this.toggleClass.bind(this, 5)} to="#">TEAM JERSEYS</Link></li>
-                        <li><a href="#">Test Item 1</a></li>
-                        <li><a href="#">Test Item 2</a></li>
                       </ul>
                     </li>
                     <li><Link  className={this.state.activeIndex == 1 ? 'active-color': null}  onClick={this.toggleClass.bind(this, 1, '46px', '78px')} to="#">Shop</Link></li>
@@ -77,7 +75,7 @@ class Header extends React.Component {
                 </div>
                 <div className="account-access">
                   <button>Access</button>
-                  <div className="dropdown">Dropdown Content</div>
+                  <div className="dropdown">Coming Soon...</div>
                   <div className="fader"></div>
                 </div>
               </div>
