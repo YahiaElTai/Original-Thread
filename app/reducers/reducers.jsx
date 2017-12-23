@@ -6,32 +6,26 @@ var activeProduct = {
     body_html : "By Raymond",
     images :  [
 
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Clay.png?v=1509004973"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Charcoal_Black.png?v=1509004974"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Grey.png?v=1509004975"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_White_Fleck.png?v=1509004976"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Aqua.png?v=1509004977"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Berry.png?v=1509004978"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Blue.png?v=1509004980"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Oatmean.png?v=1509004981"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Green.png?v=1509004982"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Navy.png?v=1509004983"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Orange.png?v=1509004984"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Purple.png?v=1509004985"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Red.png?v=1509004986"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_Solid_Dark_Grey.png?v=1509004987"},
-        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Bella_Canvas_8413_Triblend_Short_Sleeve_T-shirt_-_True_Royal.png?v=1509004988"}
-
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_White.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Black.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Carribean_Blue.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Charity_Pink.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Coral.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Green_Apple.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Hot_Pink.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Lemon_Zest.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Raspberry.png?v=1509010433"},
+        { src: "https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_391_Sheer_Scoopneck_T-shirt_-_Silver.png?v=1509010433"}
               ],
     options : [
         {
           values: ["S", "M", "L", "XL", "XXL"]
         },
         {
-          values: ["Brown", "Black", "Grey", "White", "Aqua", "MediumVioletred", "Blue", "LightGray", "Green", "Navy", "Orange", "Purple", "Red", "DarkGrey", "DarkBlue"]
+          values: ["White", "Black", "darkTurquoise", "Pink", "Salmon", "ForestGreen", "HotPink", "Yellow", "Purple", "Silver"]
         }
               ],
-      title : "Triblend Short Sleeve T-shirt"
+      title : "Sheer Scoopneck T-Shirt"
   }
 }
 

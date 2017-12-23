@@ -21,20 +21,24 @@
         margin-top: 78px;
 
         .title-sm {
+            font-family: "Montserrat";
             margin-bottom: 0;
-            color: #b7b5a4;
+            color: rgb(128, 128, 128);
             font-size: 9px;
         }
 
         .description-sm {
+            font-family: "Montserrat";
             margin-top: 4px;
             margin-bottom: 0;
-            color: #b7b5a4;
+            color: rgb(128, 128, 128);
             font-size: 9px;
         }
 
         .project-title {
+            color: rgb(51, 51, 51);
             font-family: "Montserrat";
+            line-height: 1.123;
             padding: 2px;
             font-size: 18px;
             width: 97%;
@@ -44,10 +48,10 @@
         }
 
         .project-description {
+            font-family: "Roboto";
+            color: rgb(51, 51, 51);
+            line-height: 1.571;
             margin-top: 5px;
-            font-family: "Montserrat";
-            line-height: 1.3;
-            color: gray;
             padding: 6px;
             font-size: 10px;
             width: 95%;
@@ -149,6 +153,21 @@
         background: transparent;
         border-radius: 4px;
     }
+
+    .text-input::placeholder {
+        color: rgb(236, 0, 111);
+        font-family: "Torture, Dark";
+        line-height: 1.2;
+    }
+
+    // .SO_FAT {
+    //   font-size: 20.336px;
+    //   font-family: "Torture, Dark";
+    //   color: rgb(236, 0, 111);
+    //   line-height: 1.2;
+
+    // }
+
 
     .bordered {
         border: 1px solid #79adf7 !important;
@@ -369,7 +388,7 @@
 
     .fabric-info img {
         margin-left: 22px;
-        width: 95px;
+        width: 32%;
         height: auto;
         border: 3px solid white;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 -2px 9px 0 rgba(0, 0, 0, 0.19);

@@ -15,7 +15,7 @@ class ProductCreator extends React.Component {
     this.formData = new FormData();
     this.validateText = this.validateText.bind(this);
     this.state = {
-      activeImage: 'https://cdn.shopify.com/s/files/1/2485/3042/products/Anvil_880_Ringspun_Fashion_Fit_T-shirt_-_White.png?v=1509003615',
+      activeImage: '',
       file: null,
       fileCoordinates: {
         x: 0,
@@ -27,13 +27,13 @@ class ProductCreator extends React.Component {
       },
 
       dropzoneActive: false,
-      text: 'Yo Mama So...',
+      text: 'Yo Mama So Fat',
       textCoordinates: {
-        x: 50,
-        y: 219
+        x: 24,
+        y: 217
       },
       textDimensions: {
-        width: 367,
+        width: 426,
         height: 94
       },
       fontSize: '51.7',
@@ -43,7 +43,7 @@ class ProductCreator extends React.Component {
       showFontPicker: false,
       fontFamily: 'Arial',
       aspectRatio: 0.256,
-      showTextField: false,
+      showTextField: true,
       errorMessage: false,
       transformMode: true,
       editMode: false,
@@ -184,17 +184,17 @@ class ProductCreator extends React.Component {
 
     if (size === 0) {
       this.setState({
-        fontSize: '16.5',
-        textDimensions: { height: 30, width: 117 }
+        fontSize: fontSize,
+        textDimensions: { height: textDimensions.height, width: textDimensions.width }
+      });
+
+    } else {
+      this.setState({
+        text: textValue,
+        textDimensions: { width: size * (10 * fontSize / 16.5), height: height },
+        aspectRatio: height / (size * (10 * fontSize) / 16.5)
       });
     }
-
-    this.setState({
-      text: textValue,
-      textDimensions: { width: size * (10 * fontSize / 16.5), height: height },
-      aspectRatio: height / (size * (10 * fontSize) / 16.5)
-    });
-
     this.validateText(textCoordinates.x, textCoordinates.y, textDimensions.width);
   }
 
@@ -468,7 +468,7 @@ class ProductCreator extends React.Component {
                     className={transformMode ? 'text-input bordered' : 'text-input'}
                     type="text"
                     onChange={this.getSize.bind(this)}
-                    value={this.state.text}
+                    placeholder="Yo Mama So Fat"
                     style={{ fontSize: fontSize + 'px', color: textColor, fontWeight: boldStyle, fontStyle: italicStyle, fontFamily: fontFamily }}
                   />
                   <i className={transformMode ? 'fa fa-expand' : ''} aria-hidden="true" />

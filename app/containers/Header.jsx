@@ -68,9 +68,9 @@ class Header extends React.Component {
               <div className="user-menu">
                 <div className="site-notifications">
                   <ul>
-                    <li><a href="./" className="ui-toggle"><img className="saved-work" src="/images/needle.png" /></a><div className="counter">23</div></li>
-                    <li><a href="./"><img className="ui-toggle" src="/images/bell.png" /></a><div className="counter">433</div></li>
-                    <li><a href="./"><img className="ui-toggle" src="/images/basket.png" /></a><div className="counter">2</div></li>
+                    <li><a href="./" className="ui-toggle"><img className="saved-work" src="/images/needle.png" /></a></li>
+                    <li><a href="./"><img className="ui-toggle" src="/images/bell.png" /></a></li>
+                    <li><a href="./"><img className="ui-toggle" src="/images/basket.png" /></a></li>
                   </ul>
                 </div>
                 <div className="account-access">
